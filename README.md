@@ -13,3 +13,5 @@ This process is facilatated by a double function pointer which is filled through
 The next version of this software will be much better organized and hopefully, more complete. 
 
 I believe my information theory code is also listed here. Software which is a basic implementation of the various representations I came up with for vectors in real finite dimensional vector spaces. 
+
+This code has been uploaded for archival and demonstrative purposes. 
