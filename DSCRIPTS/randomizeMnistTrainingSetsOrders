@@ -1,0 +1,29 @@
+sort --random-sort ../mnistTrainingSets/trainingList0 > tmp
+mv tmp ../mnistTrainingSets/trainingList0
+
+sort --random-sort ../mnistTrainingSets/trainingList1 > tmp
+mv tmp ../mnistTrainingSets/trainingList1
+
+sort --random-sort ../mnistTrainingSets/trainingList2 > tmp
+mv tmp ../mnistTrainingSets/trainingList2
+
+sort --random-sort ../mnistTrainingSets/trainingList3 > tmp
+mv tmp ../mnistTrainingSets/trainingList3
+
+sort --random-sort ../mnistTrainingSets/trainingList4 > tmp
+mv tmp ../mnistTrainingSets/trainingList4
+
+sort --random-sort ../mnistTrainingSets/trainingList5 > tmp
+mv tmp ../mnistTrainingSets/trainingList5
+
+sort --random-sort ../mnistTrainingSets/trainingList6 > tmp
+mv tmp ../mnistTrainingSets/trainingList6
+
+sort --random-sort ../mnistTrainingSets/trainingList7 > tmp
+mv tmp ../mnistTrainingSets/trainingList7
+
+sort --random-sort ../mnistTrainingSets/trainingList8 > tmp
+mv tmp ../mnistTrainingSets/trainingList8
+
+sort --random-sort ../mnistTrainingSets/trainingList9 > tmp
+mv tmp ../mnistTrainingSets/trainingList9

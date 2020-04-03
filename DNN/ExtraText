@@ -1,0 +1,121 @@
+/* 
+
+double DNN::calculateError(af::array& x, af::array& y) { 
+	return af::norm(x-y); 
+}
+
+void DNN::updateKernel(double error) { 
+
+}
+
+void DNN::compute_Quasisecant(af::array& input, af::array& output, af::array& v) {
+
+	std::cout << "compute_Quasisecant\n"; 
+
+	float n = 1; 
+	float d = 0; 
+
+	int inputDimension = input.dims(0); 
+	int outputDimension = output.dims(0); 
+
+	af::array g  	 = af::array(inputDimension);
+	af::array f_x    = af::array(outputDimension);
+	af::array f_x_hg = af::array(outputDimension);
+
+	af::array input_h_g; 
+
+	double h = 0.1; 
+
+	while(d < n) { 
+
+		g = af::randu(inputDimension);	
+
+		g = 2*g/af::norm(g) - 1; 
+
+		input_h_g = input + h*g; 
+
+		fire(input,f_x);
+		fire(input_h_g,f_x_hg);
+
+		n = af::norm(f_x_hg - f_x); 
+		d = h*af::dot<float>(g,v); 
+
+		#ifdef __GENERAL_DEBUG__
+			std::cout << "norm(f_x - f_x_hg) = " << n << "\n"; 
+			std::cout << "print(h*dot<float>(g,v)) = " << d << "\n"; 
+		#endif
+
+	}
+
+	output = v; 
+
+
+}
+
+float DNN::minimize_convex(af::array& input_0, af::array& input_1) {
+
+	float lambda = 0.5;
+	float lambda_l; 
+	float lambda_r; 
+
+	float current;
+	float itterationCount = 100; 
+
+	float move_left; 
+	float move_right; 	
+
+	for(int i = 2; i < itterationCount; i++) { 
+
+		current = af::norm(lambda*input_0 + (1 - lambda)*input_1); 	
+
+		lambda_l = lambda + 1/pow(i,2); 
+		lambda_r = lambda - 1/pow(i,2); 		
+
+		move_left  = af::norm( (lambda_l)*input_0 + (1 - lambda_l)*input_1); 
+		move_right = af::norm( (lambda_r)*input_0 + (1 - lambda_r)*input_1); 		
+
+		if(move_left < current) { 
+			lambda = lambda_l; 
+			current = move_left; 
+		} if(move_right < current) { 
+			lambda = lambda_r; 
+			current = move_right; 
+		}
+
+		#ifdef __DEBUG__
+			std::cout << "lambda:  " << lambda << "\n"; 
+			std::cout << "current: " << current << "\n\n"; 
+		#endif
+
+	}
+	
+	std::srand(time(NULL));
+	//values = af::array(9,9); 
+
+	return lambda; 
+
+}
+
+void DNN::loadData() { 
+
+}
+
+void DNN::opperateOverData() { 
+
+}
+
+void DNN::finiteStateOptomization() { 
+
+}
+*/
+
+/*		
+void fire(af::array& x, af::array& y); 
+double calculateError(af::array& x, af::array& y); 
+void updateKernel(double error); 
+void compute_Quasisecant(af::array& input, af::array& output, af::array& v);
+float minimize_convex(af::array& input_0, af::array& input_1); 
+void loadData(); 
+void opperateOverData(); 
+void finiteStateOptomization();
+*/
